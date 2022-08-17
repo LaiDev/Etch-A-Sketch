@@ -1,6 +1,7 @@
 
 let container = document.querySelector(".container");
-let gridSize = 16;
+let gridItem;
+let gridSize = 50;
 
 
 // createGrid() sets the grid size to be the size inputed by the user. It then calls the createGridSquares() function to populate the created grid
@@ -25,8 +26,14 @@ function createGridSquares()
         div.classList.add("grid-item")
 
         container.append(div);
+
+        div.onmouseenter = () => {
+            div.style.backgroundColor = "black";
+        }
     }
+
 }
 
 
 createGrid();
+
