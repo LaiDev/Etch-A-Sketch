@@ -1,15 +1,17 @@
 
-let container = document.querySelector(".container");
-let gridItem;
-let gridSize = 50;
+let canvas = document.querySelector(".canvas");
+let colorSquare = document.querySelectorAll(".color");
 
+
+let gridSize = 10;
+let cellColor = "black";
 
 // createGrid() sets the grid size to be the size inputed by the user. It then calls the createGridSquares() function to populate the created grid
 
 function createGrid()
 {
-    container.style.gridTemplateColumns = (`repeat(${gridSize}, 1fr`);
-    container.style.gridTemplateRows = (`repeat(${gridSize}, 1fr`);
+    canvas.style.gridTemplateColumns = (`repeat(${gridSize}, 1fr`);
+    canvas.style.gridTemplateRows = (`repeat(${gridSize}, 1fr`);
 
     createGridSquares();
 }
@@ -25,15 +27,26 @@ function createGridSquares()
         let div = document.createElement("div");
         div.classList.add("grid-item")
 
-        container.append(div);
+        canvas.append(div);
 
         div.onmouseenter = () => {
-            div.style.backgroundColor = "black";
+            div.style.backgroundColor = `${cellColor}`
         }
+
     }
 
 }
 
 
-createGrid();
+function changeBrushColor() {
+    colorSquare.forEach(color => {
+        color.onclick = () => {
+            cellColor = color.value;
+        }
+    })
+}
 
+
+
+createGrid();
+changeBrushColor();

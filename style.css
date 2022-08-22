@@ -4,16 +4,29 @@ body
     height: 100vh;
     display: grid;
     place-content: center;
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); 
+    background-color: #2F394D;
+    margin: 0;
+    padding: 0;
 }
+
+h1
+{
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+}
+
 .container
 {
-    width: 80vw;
+    width: 50vw;
     height: 80vh;
     display: grid;
-    place-content: center;
     text-align: center;
+    display: grid;
+    grid-template-columns: .25fr 1fr;
+    grid-template-rows: 1fr;
+    background-color: #364666;
+    border-radius: 15px;
 }
 .canvas 
 {
@@ -24,29 +37,40 @@ body
     border: 2px black solid;
 }
 
+.main-content{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-content
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .grid-item
 {
     background-color: lightgray;
 
 }
 
-.grid-item:hover
-{
-background-color: blue;
-}
-
 .colors
 {
-    display: flex;
-    gap: 5px;
-    place-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .color
 {
     width: 50px;
     height: 50px;
-    border: 3px black solid;
+    border: none;
+    border-radius: 5px;
 }
 
 
