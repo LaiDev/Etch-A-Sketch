@@ -7,7 +7,6 @@ function createGrid(gridSize)
 {
     canvas.style.gridTemplateColumns = (`repeat(${gridSize}, 1fr`);
     canvas.style.gridTemplateRows = (`repeat(${gridSize}, 1fr`);
-    console.log(`Create Grid : ${gridSize}`)
 
     createGridSquares(gridSize);
 }
@@ -21,7 +20,6 @@ let cellColor = "black";
 
 function createGridSquares(gridSize)
 {
-    console.log(`Create GridGridSquares : ${gridSize}`)
 
     let totalSquares = gridSize * gridSize;
     
@@ -82,7 +80,7 @@ function clearGrid()
 
 let slider = document.querySelector("#slider");
 
-slider.addEventListener("mouseup", updateGrid)
+slider.addEventListener("input", updateGrid)
 
 function updateGrid()
 {
@@ -97,6 +95,14 @@ function updateGrid()
     }
 
     createGrid(newGridValue);
+
+    //Updates the Grid Size Text
+
+    let valueText = document.querySelectorAll("#value");
+
+    valueText.forEach(value => {
+        value.innerHTML = `${newGridValue}`
+    })
     
 }
 
