@@ -78,7 +78,7 @@ h1
 .gridItem
 {
     background-color: lightgray;
-
+    border: 2px black solid;
 }
 
 .colors
